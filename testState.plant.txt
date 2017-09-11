@@ -1,15 +1,18 @@
 @startuml
 
+
+title States of a scenario test
+
 state Defined #8BC1FF : * Test has been defined and \n   exists in the test plan.
 state Runnable #D7ACE6 : * PVE has the necessary \n   mechanisms to run the test.
-state Complete #ff7b00 : * Test result yet to be classified \n   based on criteria.
+state Complete #ff7b00 : * Test complete but result\n   not yet to classified.
 state Pass #249c00 : * Test has passed.
 state Fail #e80d0d : * Test has failed.
 
 Defined -[#BLACK]-> Runnable: Implement\n PVE scripts
 Runnable -[#BLACK]-> Complete: Run in PVE
-Complete -[#BLACK]-> Pass: gather and \n analyse
-Complete -[#BLACK]-> Fail: gather and \n analyse
+Complete -[#BLACK]-> Pass: post-process and \n analyse
+Complete -[#BLACK]-> Fail: post-process and \n analyse
 Fail -[#BLACK]-> Complete: Re-run in PVE
 
 @enduml
