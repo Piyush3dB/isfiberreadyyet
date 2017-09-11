@@ -1,0 +1,17 @@
+@startuml
+
+
+state Defined : * Test has been defined and \n  exists in the test plan.
+state Runnable : * PVE has the necessary \n  mechanisms to run the test.
+state Complete : * Test result is yet to be \n  classified based on some criteria.
+state Pass : * Test has passed.
+state Fail : * Test has failed.
+
+
+Defined --> Runnable: Implement\n PVE scripts
+Runnable --> Complete: Run in PVE
+Complete --> Pass: gather and \n analyse
+Complete --> Fail: gather and \n analyse
+Fail --> Complete: Re-run in PVE
+
+@enduml

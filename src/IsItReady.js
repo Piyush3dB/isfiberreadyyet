@@ -18,13 +18,15 @@ class IsItReady extends React.Component {
         target="_blank"
         rel="noopener noreferrer"
         href="https://github.com/facebook/react/issues/10294">
-        Try the Beta!
+        {/* Try the Beta! */}
+        --
       </a>
     );
 
     return decision ? (
       <div className="IsItReady">
-        <h1 className="IsItReadyText">Yes<i>{'\ud83c\udf89'}</i></h1>
+        {/* <h1 className="IsItReadyText">Yes<i>{'\ud83c\udf89'}</i></h1> */}
+        <h1 className="IsItReadyText">.</h1>
         <p className="IsItReadyYes">
           {releaseLink}
         </p>

@@ -1,7 +1,9 @@
 body {
-  color: #262626;
-  font-family: sans-serif;
+  font-family: Ubuntu, Tahoma, Helvetica, sans-serif;
   font-size: 14px;
+  /*line-height: 1.4em;*/
+  background: #f7f7f7;
+  color: #404040;
   padding: 50px 10px 30px;
 }
 
@@ -59,7 +61,8 @@ i {
 }
 
 .ProgressBarFill {
-  background: #262626;
+  border-bottom: 1px solid rgba(100, 100, 100, 0.35);
+  background: #e2e2e2;
   color: #fff;
   height: 30px;
   line-height: 30px;
@@ -67,6 +70,7 @@ i {
   text-indent: 10px;
   text-overflow: ellipsis;
   white-space: nowrap;
+  padding: 6px 30px 4px;
 }
 
 .Graph {
