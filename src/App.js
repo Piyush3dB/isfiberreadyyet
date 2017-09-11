@@ -2,6 +2,7 @@ import React from 'react';
 import ProgressBar from './ProgressBar';
 import IsItReady from './IsItReady';
 import Graph from './Graph';
+import SummaryChart from './SummaryChart';
 import HeatMap from './HeatMap';
 import Footer from './Footer';
 
@@ -80,6 +81,10 @@ class App extends React.Component {
           onMouseOut={this.handleMouseOut}
           onMouseOver={this.handleMouseOver}
         />
+
+        <SummaryChart/>
+
+
         <HeatMap
           testData={props.testData}
           onMouseOut={this.handleMouseOut}
