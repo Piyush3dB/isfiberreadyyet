@@ -8,6 +8,7 @@
   "dependencies": {
     "react": "next",
     "react-dom": "next",
+    "react-image-file": "^0.1.0",
     "victory": "0.22.1"
   },
   "scripts": {

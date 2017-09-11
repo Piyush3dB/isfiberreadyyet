@@ -1,10 +1,12 @@
 import React from 'react';
+//import Image from 'react-image';
 import ProgressBar from './ProgressBar';
 import IsItReady from './IsItReady';
 import Graph from './Graph';
 import SummaryChart from './SummaryChart';
 import HeatMap from './HeatMap';
 import Footer from './Footer';
+
 
 const tooltipIcons = {
   passing: '\u2705',
@@ -90,6 +92,9 @@ class App extends React.Component {
           onMouseOut={this.handleMouseOut}
           onMouseOver={this.handleMouseOver}
         />
+
+  
+
         <Footer />
         {tooltip}
       </div>
