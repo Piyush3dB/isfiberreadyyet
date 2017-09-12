@@ -4,6 +4,7 @@ import ProgressBar from './ProgressBar';
 import IsItReady from './IsItReady';
 import Graph from './Graph';
 import SummaryChart from './SummaryChart';
+import Interpolation from './Interpolation';
 import HeatMap from './HeatMap';
 import Footer from './Footer';
 
@@ -86,8 +87,15 @@ class App extends React.Component {
           onMouseOver={this.handleMouseOver}
         />
 
-        <SummaryChart/>
+        <SummaryChart
+          width={props.width}
+        />
+        <Interpolation/>
 
+
+        {/* <div className="post">
+          <img src="images/NoC-test-states.png" />
+        </div> */}
 
         {/* <HeatMap
           testData={props.testData}

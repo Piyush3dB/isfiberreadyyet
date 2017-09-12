@@ -9,6 +9,7 @@ import {
 
 const BLACK = "#262626";
 const GRAY = "#ccc";
+const RED = "#ff0000";
 
 function getTooltipContent(data) {
   let gitHash = data.gitHash.slice(0, 7);
@@ -72,26 +73,26 @@ class Graph extends React.Component {
           strokeWidth: 1
         },
         ticks: {
-          size: 5,
+          size: 1,
           stroke: BLACK,
           strokeWidth: 1
         },
         tickLabels: {
           fill: BLACK,
           fontFamily: "inherit",
-          fontSize: 14,
+          fontSize: 11,
         }
       },
       line: {
         data: {
-          stroke: BLACK,
+          stroke: RED,
           strokeWidth: 3
         }
       },
       scatter: {
         data: {
-          strokeWidth: 10,
-          stroke: "transparent",
+          strokeWidth: 1,
+          stroke: BLACK,
           fill: data => data.index === lastIndex ? BLACK : "transparent"
         }
       }
@@ -100,17 +101,18 @@ class Graph extends React.Component {
     return (
       <div className="Graph" onMouseOut={this.props.onMouseOut}>
         <VictoryChart
-          height={260}
-          width={width}
+          height={1.5*260}
+          width={width*0.75}
           containerComponent={<VictoryContainer responsive={false} title="" />}>
           <VictoryAxis
+            label="Date"
             scale="time"
             standalone={false}
             style={styles.xAxis}
             tickValues={graphData.map((data) => data.date)}
             tickFormat={(date, index) => {
               return index === 0 || index === graphData.length - 1 ?
-                `${date.getMonth() + 1}/${date.getDate()}` :
+                `${date.getDate()}/${date.getMonth() + 1}/2017` :
                 '';
             }}
           />
@@ -118,8 +120,9 @@ class Graph extends React.Component {
             dependentAxis
             domain={[0, 100]}
             style={styles.yAxis}
-            tickFormat={(x) => `${x}%`}
+            tickFormat={(x) => `${x}`}
             tickValues={[0, 25, 50, 75, 100]}
+            label="Completion (%)"
           />
           <VictoryLine
             data={graphData}
@@ -136,17 +139,17 @@ class Graph extends React.Component {
             events={[{
               eventHandlers: {
                 onMouseOver: (event, point) => {
-                  this.props.onMouseOver(event, getTooltipContent(point.datum));
-                  return getStyleMutationObj(BLACK);
+                  //this.props.onMouseOver(event, getTooltipContent(point.datum));
+                  //return getStyleMutationObj(BLACK);
                 },
                 onMouseOut: (event, point) => {
-                  let color = point.index === lastIndex ? BLACK : "transparent";
-                  return getStyleMutationObj(color);
+                  //let color = point.index === lastIndex ? BLACK : "transparent";
+                  //return getStyleMutationObj(color);
                 },
                 onClick: (event, point) => {
                   let hash = point.datum.gitHash;
                   let url = `https://github.com/facebook/react/commit/${hash}`;
-                  window.open(url);
+                  //window.open(url);
                 }
               }
             }]}
