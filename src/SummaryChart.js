@@ -39,6 +39,8 @@ class SummaryChart extends React.Component {
       <div>
         <h1>Victory Tutorial</h1>
         <VictoryChart
+          width={width*0.25}
+          height={200}
           domainPadding={10}
           theme={VictoryTheme.material}
         >

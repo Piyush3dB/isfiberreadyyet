@@ -74,7 +74,7 @@ const myDataset = [
     ],
   ];
   
-  class SummaryChart extends React.Component {
+  class SummaryChart2 extends React.Component {
     // This is an example of a function you might use to transform your data to make 100% data
     transformData(dataset) {
       const totals = dataset[0].map((data, i) => {
@@ -180,4 +180,4 @@ const myDataset = [
 
 
 
-//export default SummaryChart;
+export default SummaryChart2;

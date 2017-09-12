@@ -11,7 +11,7 @@ class ProgressBar extends React.Component {
     return (
       <div className="ProgressBar">
         <div className="ProgressBarFill" style={{width: data.percent + "%"}}>
-          NoC Performance Dashboard
+          Title
         </div>
       </div>
     );

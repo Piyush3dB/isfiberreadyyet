@@ -3,8 +3,10 @@ import React from 'react';
 import ProgressBar from './ProgressBar';
 import IsItReady from './IsItReady';
 import Graph from './Graph';
-import SummaryChart from './SummaryChart';
-import Interpolation from './Interpolation';
+//import SummaryChart from './SummaryChart';
+import SummaryChart from './SummaryChart_bak';
+//import Trend from './Trend';
+//import Interpolation from './Interpolation';
 import HeatMap from './HeatMap';
 import Footer from './Footer';
 
@@ -76,37 +78,19 @@ class App extends React.Component {
         
         <ProgressBar data={props.mostRecent} />
 
-        <IsItReady
-          data={props.mostRecent}
-          testData={props.testData}
-        />
-        <Graph
-          width={props.width}
-          graphData={props.graphData}
-          onMouseOut={this.handleMouseOut}
-          onMouseOver={this.handleMouseOver}
-        />
-
+        // TODO1: Improve this graph
         <SummaryChart
           width={props.width}
         />
-        <Interpolation/>
 
+        // TODO2: Add area chart here with 2 element dropdown list to change the yaxis units.
 
+        // TODO3: import image here for display
         {/* <div className="post">
           <img src="images/NoC-test-states.png" />
         </div> */}
 
-        {/* <HeatMap
-          testData={props.testData}
-          onMouseOut={this.handleMouseOut}
-          onMouseOver={this.handleMouseOver}
-        />
 
-  
-
-        <Footer /> */}
-        {tooltip}
       </div>
     );
   }
