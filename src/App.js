@@ -72,7 +72,9 @@ class App extends React.Component {
 
     return (
       <div>
+        
         <ProgressBar data={props.mostRecent} />
+
         <IsItReady
           data={props.mostRecent}
           testData={props.testData}
@@ -87,7 +89,7 @@ class App extends React.Component {
         <SummaryChart/>
 
 
-        <HeatMap
+        {/* <HeatMap
           testData={props.testData}
           onMouseOut={this.handleMouseOut}
           onMouseOver={this.handleMouseOver}
@@ -95,7 +97,7 @@ class App extends React.Component {
 
   
 
-        <Footer />
+        <Footer /> */}
         {tooltip}
       </div>
     );

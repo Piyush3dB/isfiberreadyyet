@@ -71,6 +71,9 @@ i {
   text-overflow: ellipsis;
   white-space: nowrap;
   padding: 6px 30px 4px;
+  color: #404040;
+  font-size: 24px;
+  font-weight: bold;
 }
 
 .Graph {

@@ -11,7 +11,7 @@ class ProgressBar extends React.Component {
     return (
       <div className="ProgressBar">
         <div className="ProgressBarFill" style={{width: data.percent + "%"}}>
-          {`${data.passing} of ${data.total} unit tests passing`}
+          NoC Performance Dashboard
         </div>
       </div>
     );
